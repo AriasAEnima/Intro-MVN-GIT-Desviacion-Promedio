@@ -1,4 +1,4 @@
-package edu.escuelaing.arem.intro;
+<package edu.escuelaing.arem.intro;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
