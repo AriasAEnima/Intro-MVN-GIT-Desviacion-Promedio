@@ -5,7 +5,7 @@
 * **J. Eduardo Arias Barrera** - [AriasAEnima](https://github.com/AriasAEnima)
 
 # Documento:
-## [(Click Aqui)](informe)
+## [(Click Aqui)](https://github.com/AriasAEnima/Intro-MVN-GIT-Desviacion-Promedio/blob/master/informe.pdf)
 
 ### Prerrequisitos
 
