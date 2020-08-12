@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem.intro;
-
-import java.util.Iterator;
-import java.util.ListIterator;
+package edu.escuelaing.arem.intro.structures;
 
 /**
  *

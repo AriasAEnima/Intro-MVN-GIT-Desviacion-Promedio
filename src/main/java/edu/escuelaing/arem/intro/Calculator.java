@@ -5,21 +5,30 @@
  */
 package edu.escuelaing.arem.intro;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.List;
-import java.lang.Math; 
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.LinkedList;
 
 /**
  *
  * @author J. Eduardo Arias
  */
 public class Calculator {
+    
+    public static final Calculator.DoubleMath MEAN=(a)->{
+            Double ans=0.0;
+            for(Double n:a){
+                ans+=n;
+            }
+            return ans/a.size();
+        };
+        
+    public static final Calculator.DoubleMath DESVIATION=(a)->{
+            Double m=Calculator.operateList(a, MEAN);
+            Double ans=0.0;
+            for(Double n:a){
+                ans+=Math.pow((n-m),2);
+            }
+            return Math.sqrt(ans/(a.size()-1));
+        };
     
     public interface IntegerMath {
         int operation(int a, int b);        
@@ -32,7 +41,7 @@ public class Calculator {
         double operation(List<Double> ld);
     }
 
-    public int operateBinary(int a, int b, IntegerMath op) {
+    public  static int operateBinary(int a, int b, IntegerMath op) {
         return op.operation(a, b);
     }
     
@@ -42,7 +51,7 @@ public class Calculator {
      * @param op la opracion
      * @return resultado de la operacion
      */
-    public double operateList(List<Double> a, DoubleMath op) {
+    public static double operateList(List<Double> a, DoubleMath op) {
         return op.operation(a);
     }
   

@@ -5,8 +5,9 @@ package edu.escuelaing.arem.intro;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import edu.escuelaing.arem.intro.Calculator;
-import edu.escuelaing.arem.intro.LinkedListG;
+import static edu.escuelaing.arem.intro.Calculator.DESVIATION;
+import static edu.escuelaing.arem.intro.Calculator.MEAN;
+import edu.escuelaing.arem.intro.structures.LinkedListG;
 import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -15,44 +16,23 @@ import static org.junit.Assert.*;
  * @author J. Eduardo Arias
  */
 public class CalculadoraTest {
-    private Calculator myApp;
-    private Calculator.DoubleMath mean;
-    private Calculator.DoubleMath sDeviation;
-    private  Calculator.IntegerMath addition = (a, b) -> a + b;
-    private  Calculator.IntegerMath subtraction = (a, b) -> a - b;
+  
+    private final Calculator.IntegerMath ADDITION = (a, b) -> a + b;
+    private final Calculator.IntegerMath SUBTRACTION = (a, b) -> a - b;
 
     /**
      * Sets up the test fixture. 
      * (Called before every test case method.)
      */
-    @Before
-    public void setUp() {
-        myApp = new Calculator();
-        mean=(a)->{
-            Double ans=0.0;
-            for(Double n:a){
-                ans+=n;
-            }
-            return ans/a.size();
-        };
-        
-        sDeviation=(a)->{
-            Double m=myApp.operateList(a, mean);
-            Double ans=0.0;
-            for(Double n:a){
-                ans+=(n-m)*(n-m);
-            }
-            return Math.sqrt(ans/(a.size()-1));
-        };
-    }
+   
 
     @Test
     public void enteros(){     
         try{
             System.out.println("40 + 2 = " +
-            myApp.operateBinary(40, 2, addition));
+            Calculator.operateBinary(40, 2, ADDITION));
             System.out.println("20 - 10 = " +
-            myApp.operateBinary(20, 10, subtraction));  
+            Calculator.operateBinary(20, 10, SUBTRACTION));  
             assertTrue(true);
         }catch(Exception e){
             fail("Error");
@@ -72,8 +52,8 @@ public class CalculadoraTest {
         lista.add(1657.0);
         lista.add(624.0);
         lista.add(1503.0);
-        Double ans1m=myApp.operateList(lista, mean);
-        Double ans2m=myApp.operateList(lista, sDeviation);
+        Double ans1m=Calculator.operateList(lista, MEAN);
+        Double ans2m=Calculator.operateList(lista, DESVIATION);
         assertEquals(550.6, ans1m,0.0001);
         assertEquals(572.03, ans2m,0.005);
     }
@@ -91,8 +71,8 @@ public class CalculadoraTest {
         lista.add(198.7);
         lista.add(38.8);
         lista.add(138.2);
-        Double ans1m=myApp.operateList(lista, mean);
-        Double ans2m=myApp.operateList(lista, sDeviation);
+        Double ans1m=Calculator.operateList(lista, MEAN);
+        Double ans2m=Calculator.operateList(lista, DESVIATION);
         assertEquals(60.32, ans1m,0.0001);
         assertEquals(62.26, ans2m,0.005);
     }
@@ -110,8 +90,8 @@ public class CalculadoraTest {
         lista.add(1890.0);
         lista.add(788.0);
         lista.add(1601.0);
-        Double ans1m=myApp.operateList(lista, mean);
-        Double ans2m=myApp.operateList(lista, sDeviation);
+        Double ans1m=Calculator.operateList(lista, MEAN);
+        Double ans2m=Calculator.operateList(lista, DESVIATION);
         assertEquals(638.9, ans1m,0.0001);
         assertEquals(625.633981, ans2m,0.00001);
     }
