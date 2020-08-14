@@ -59,6 +59,12 @@ Estas se ejecutaran al hacer mvn package
 ![test](media/test.PNG)
 
 
+ Test | Expected Mean | Expected Std. Dev. | Ans Mean | Ans D Std. Dev.
+ ---|----|----|----|---
+ Column 1 | 550.6 | 572.03 | 550.6 | 572.026844746..
+ Column 2 | 60.32  | 62.26 | 60.32 | 62.2558306060 ...
+
+
 ## Documentación:
 
 Se encuentra en la carpeta y se puede generar
