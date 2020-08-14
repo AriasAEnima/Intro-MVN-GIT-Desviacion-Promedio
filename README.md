@@ -1,5 +1,7 @@
 # Introduccion a MVN GIT y GitHub ( Media y Desviación Estándar)
 
+Consiste en un repaso de la utilizacion de MVN , git y Github , creando una funcion en java que permite calcular la desviacion estandar y promedio de un conjunto de datos
+
 ## Autor
 
 * **J. Eduardo Arias Barrera** - [AriasAEnima](https://github.com/AriasAEnima)
